@@ -9,7 +9,7 @@
 ![Accuracy](https://img.shields.io/badge/Test_Accuracy-89.90%25-success?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-**A high-performance, VGG16-based Convolutional Neural Network for automated pneumonia diagnosis from chest X-ray images.**
+**A VGG16-based Convolutional Neural Network for automated pneumonia diagnosis from chest X-ray images.**
 
 [🚀 Live Demo](#-live-demo) • [📖 Documentation](#-the-strategy-why-this-model-is-robust) • [⚡ Quick Start](#-quickstart) • [📊 Results](#-final-results-8990-accuracy)
 
@@ -20,8 +20,6 @@
 ## 🎯 Overview
 
 A production-ready deep learning model built with TensorFlow that achieves **89.90% test accuracy** for pneumonia detection in chest X-rays. This project emphasizes scientific rigor and reproducibility, using proper validation techniques and transfer learning with VGG16.
-
-> **Built for MBZUAI Application Portfolio** - Demonstrating expertise in medical image analysis, transfer learning, and robust model validation.
 
 ### ✨ Key Highlights
 
@@ -36,9 +34,7 @@ A production-ready deep learning model built with TensorFlow that achieves **89.
 
 ## 🚀 Live Demo
 
-**[🌐 View Live Demo on Hugging Face Spaces](#)**
-
-> *To deploy: Upload your Gradio app to Hugging Face Spaces (free) and replace the link above with your public URL.*
+**[[🌐 View Live Demo on Hugging Face Spaces(https://huggingface.co/spaces/Dilavesh/Pneumonia-Xray-Diagnosis)](#)**
 
 ---
 
@@ -65,21 +61,6 @@ The model excels at its **most critical task**: identifying pneumonia with **96%
 
 > **Most public notebooks achieve 92-95% accuracy on this dataset. Why is mine different?**
 
-Many implementations make a critical methodological error: they validate against the tiny **16-image** `val` folder provided in the dataset. These inflated scores are statistical flukes and not reproducible.
-
-### My Approach: Scientific Rigor
-
-```mermaid
-graph LR
-    A[Original Dataset] --> B[Ignore 16-image val set]
-    B --> C[Create proper 80/20 split]
-    C --> D[4,173 training images]
-    C --> E[1,043 validation images]
-    D --> F[VGG16 Transfer Learning]
-    E --> F
-    F --> G[Early Stopping on val_loss]
-    G --> H[89.90% Reproducible Accuracy]
-```
 
 #### 🔑 Key Design Decisions
 
@@ -107,32 +88,7 @@ graph LR
 
 ---
 
-## 📂 Project Structure
 
-```
-Pneumonia-Xray-Diagnosis-CNN/
-│
-├── 📄 train_and_evaluate.py    # Main training pipeline
-├── 📄 app.py                   # Gradio web interface
-├── 📄 requirements.txt         # Python dependencies
-├── 📄 README.md               # This file
-│
-├── 📊 model/
-│   └── pneumonia_VGG16_best.keras  # Saved model (generated)
-│
-├── 📈 results/
-│   ├── training_history.png   # Loss/accuracy curves
-│   ├── confusion_matrix.png   # Classification results
-│   └── metrics_report.txt     # Detailed metrics
-│
-└── 🗂️ data/                   # Dataset (auto-downloaded)
-    └── chest-xray-pneumonia/
-        ├── train/
-        ├── test/
-        └── val/
-```
-
----
 
 ## 📊 Dataset
 
@@ -228,7 +184,5 @@ Then open your browser to `http://localhost:7860` to test the model with your ow
 - **Matplotlib & Seaborn** - Results visualization
 
 
-
-![Visitors](https://visitor-badge.laobi.icu/badge?page_id=your-username.Pneumonia-Xray-Diagnosis-CNN)
 
 </div>
