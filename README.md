@@ -34,7 +34,7 @@ A production-ready deep learning model built with TensorFlow that achieves **89.
 
 ## 🚀 Live Demo
 
-**[[🌐 View Live Demo on Hugging Face Spaces(https://huggingface.co/spaces/Dilavesh/Pneumonia-Xray-Diagnosis)](#)**
+**[[🌐 View Live Demo on Hugging Face Spaces](#https://huggingface.co/spaces/Dilavesh/Pneumonia-Xray-Diagnosis)**
 
 ---
 
