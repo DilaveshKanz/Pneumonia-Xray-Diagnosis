@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🫁 Pneumonia X-Ray Diagnosis (VGG16 CNN)
+# Pneumonia X-Ray Diagnosis (VGG16 CNN)
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python&logoColor=white)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
