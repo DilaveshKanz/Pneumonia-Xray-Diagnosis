@@ -1,4 +1,4 @@
-# 🩻 Pneumonia X-Ray Diagnosis (VGG16 CNN)
+# Pneumonia X-Ray Diagnosis (VGG16 CNN)
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange?style=for-the-badge&logo=tensorflow)
@@ -11,14 +11,17 @@ This project was built as part of my portfolio for application to MBZUAI.
 
 ---
 
-## 🏆 Final Results: 89.90% Accuracy
+## 🚀 Live Demo
+
+**[Click here to view the live demo hosted on Hugging Face Spaces]**
+
+*(Note: You will need to host your Gradio app on a service like Hugging Face Spaces (free) and then replace the link above with your public URL.)*
+
+---
+
+## Final Results: 89.90% Accuracy
 
 This model excels at its most critical task: **identifying pneumonia (96% Recall)**, while maintaining a strong balance in identifying normal cases (79% Recall).
-
-| Training History | Confusion Matrix |
-| :---: | :---: |
-| ![Training History](training_history_VGG16.png) | ![Final Confusion Matrix](confusion_matrix_VGG16.png) |
-
 ---
 
 ## 🔬 The Strategy: Why This Model is Robust
@@ -36,6 +39,14 @@ This **89.90%** score is a trustworthy, reproducible benchmark of what this arch
 
 ---
 
+## 📊 Dataset
+
+The model was trained on the **Chest X-Ray (Pneumonia) dataset** available on Kaggle. The `train_and_evaluate.py` script automatically downloads this dataset using the KaggleHub API.
+
+* **Dataset Link:** [https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia)
+
+---
+
 ## 🚀 Quickstart
 
 This repository is fully self-contained. The scripts will automatically download the dataset and install dependencies.
@@ -45,3 +56,45 @@ This repository is fully self-contained. The scripts will automatically download
 # Remember to change "your-username" to your actual GitHub username
 git clone [https://github.com/your-username/Pneumonia-Xray-Diagnosis-CNN.git](https://github.com/your-username/Pneumonia-Xray-Diagnosis-CNN.git)
 cd Pneumonia-Xray-Diagnosis-CNN
+```
+### 2. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Train & Evaluate the Model
+*This all-in-one script runs the entire experiment:
+
+*Downloads the Kaggle dataset
+
+*Runs the training with EarlyStopping
+
+*Saves the best model as pneumonia_VGG16_best.keras
+
+*Prints the final accuracy report and saves the graphs.
+
+```bash
+python train_and_evaluate.py
+```
+
+### 4. Run the Interactive Web App
+```bash
+python app.py
+```
+
+### 🛠️ Technology Stack
+
+*Python 3.10
+
+*TensorFlow & Keras: For building and training the CNN.
+
+*Gradio: For creating the interactive web demo.
+
+*Scikit-learn: For calculating class weights and metrics.
+
+*KaggleHub: For dynamically downloading the dataset.
+
+*Seaborn & Matplotlib: For plotting the results.
+
+*OpenCV: For image preprocessing in the app.
+
