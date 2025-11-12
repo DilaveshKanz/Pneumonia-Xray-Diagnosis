@@ -1,0 +1,8 @@
+tensorflow
+seaborn
+scikit-learn
+matplotlib
+kagglehub
+numpy
+gradio
+opencv-python
