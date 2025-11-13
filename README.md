@@ -88,6 +88,19 @@ The model excels at its **most critical task**: identifying pneumonia with **96%
 
 ---
 
+## ⚠️ Known Limitations & Future Improvements
+
+This model is a highly accurate **specialist**. It is an expert at one task: *classifying X-rays that it assumes are of a chest*. It has two key limitations:
+
+1.  **Out-of-Distribution (OOD) Images:** When given a non-X-ray (e.g., a color photo of a water tank), the model will fail, as it's "confidently wrong." It will force the image into one of its two known classes.
+    * **✅ Solution:** The `app.py` script includes a **grayscale filter** to reject color photos *before* they reach the model.
+
+2.  **Domain Specificity:** When given a *different type* of grayscale X-ray (e.g., a leg or hand), the model will also fail. It does not know *what* it is looking at, only that the bone and tissue patterns are more mathematically similar to one class than the other.
+    * **💡 Future Improvement:** The ideal solution is a **two-stage pipeline**.
+        1.  **Gatekeeper Model:** A *new* CNN would be trained on a dataset of different body parts ('CHEST', 'LEG', 'HAND', etc.).
+        2.  **Diagnosis Model:** Only if the Gatekeeper model classifies the image as 'CHEST' would it be passed to our VGG16 model for pneumonia diagnosis.
+
+---
 
 
 ## 📊 Dataset
